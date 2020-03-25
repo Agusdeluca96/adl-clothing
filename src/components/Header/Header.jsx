@@ -7,18 +7,18 @@ import './Header.scss';
 
 const Header = () => {
 
-  useEffect(() => {
-    var header = document.getElementById('header');
-    window.onscroll = function () {
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-      if (scrollTop > 0) {
-        header.classList.add("scrolled");
-      }
-      else {
-        header.classList.remove("scrolled");
-      }
-    };
-  })
+  // useEffect(() => {
+  //   var header = document.getElementById('header');
+  //   window.onscroll = function () {
+  //     var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  //     if (scrollTop > 0) {
+  //       header.classList.add("scrolled");
+  //     }
+  //     else {
+  //       header.classList.remove("scrolled");
+  //     }
+  //   };
+  // })
 
   return (
     <div className="header" id="header">
@@ -28,7 +28,7 @@ const Header = () => {
       </Link>
       <div className="options">
         <Link className="option" to="shop">SHOP</Link>
-        <Link className="option" to="contact">CONTACT</Link>
+        <Link className="option" to="login">LOG IN</Link>
       </div>
     </div>
   )

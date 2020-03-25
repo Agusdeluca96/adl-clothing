@@ -6,8 +6,7 @@ import DIRECTORY_DATA from './Directory.data';
 
 const Directory = () => {
 
-  const [sections, setSections] = useState(DIRECTORY_DATA);
-  const handleSectionsChange = e => setSections(e.target.value);
+  const [sections] = useState(DIRECTORY_DATA);
 
   return (
     <div className="directory">

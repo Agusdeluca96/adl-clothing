@@ -1,7 +1,10 @@
 body {
   font-size: 12px;
   font-family: "Open Sans Condensed";
-  background: #2c3e50;
+  background: #586777;
+  :-webkit-scrollbar {
+    display: none;
+  }
 
   h1 {
     text-align: center;

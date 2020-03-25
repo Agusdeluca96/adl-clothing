@@ -6,8 +6,7 @@ import CollectionPreview from '../../components/CollectionPreview';
 
 const Shop = () => {
 
-  const [collections, setCollections] = useState(SHOP_DATA);
-  const handleCollectionsChange = e => setCollections(e.target.value);
+  const [collections] = useState(SHOP_DATA);
 
   return (
     <div className="shop">
