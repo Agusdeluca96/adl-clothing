@@ -1,0 +1,28 @@
+body {
+  font-size: 12px;
+  font-family: "Open Sans Condensed";
+  background: #2c3e50;
+
+  h1 {
+    text-align: center;
+    margin: 40px 0 40px;
+    text-align: center;
+    font-size: 30px;
+    color: #ecf0f1;
+    text-shadow: 2px 2px 4px #000000;
+    font-family: "Cherry Swash", cursive;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ecf0f1;
+
+    &:hover {
+      color: #2bd6b4;
+    }
+  }
+
+  .content {
+    padding: 90px 50px 20px 50px;
+  }
+}
