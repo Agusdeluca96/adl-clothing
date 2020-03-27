@@ -1,24 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { auth } from '../../utils/firebase';
 
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo.png';
 
 import './Header.scss';
 
-const Header = () => {
-
-  // useEffect(() => {
-  //   var header = document.getElementById('header');
-  //   window.onscroll = function () {
-  //     var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-  //     if (scrollTop > 0) {
-  //       header.classList.add("scrolled");
-  //     }
-  //     else {
-  //       header.classList.remove("scrolled");
-  //     }
-  //   };
-  // })
+const Header = ({ currentUser }) => {
 
   return (
     <div className="header" id="header">
@@ -28,7 +16,12 @@ const Header = () => {
       </Link>
       <div className="options">
         <Link className="option" to="shop">SHOP</Link>
-        <Link className="option" to="login">LOG IN</Link>
+        {
+          currentUser ?
+            <a href="/" className="option" onClick={() => auth.signOut()}>SIGN OUT</a>
+            :
+            <Link className="option" to="sign-in">SIGN IN</Link>
+        }
       </div>
     </div>
   )
