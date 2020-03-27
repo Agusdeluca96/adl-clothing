@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import FormInput from '../../components/FormInput/FormInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
@@ -49,6 +50,8 @@ const SignIn = () => {
           <CustomButton onClick={signInWithGoogle} customClass="google-sign-in">Sign in with Google</CustomButton>
         </div>
       </form>
+
+      <span className="sign-up">Don't have an account? <Link to="sign-up">Sign up now!</Link></span>
     </div>
   )
 }
