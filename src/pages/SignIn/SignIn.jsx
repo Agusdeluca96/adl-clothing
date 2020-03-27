@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import FormInput from '../../components/FormInput/FormInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
 
-import { signInWithGoogle } from '../../utils/firebase';
+import { auth, signInWithGoogle } from '../../utils/firebase';
 
 import './SignIn.scss';
 
@@ -17,11 +17,17 @@ const SignIn = () => {
   const handlePasswordChange = e => setPassword(e.target.value);
 
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
 
-    setEmail('');
-    setPassword('');
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      setEmail('');
+      setPassword('');
+    } catch (error) {
+      console.log(error);
+    }
+
   }
 
   return (
