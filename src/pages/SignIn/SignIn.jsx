@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 
-import './Login.scss'
-import FormInput from '../../components/FormInput';
-import CustomButton from '../../components/CustomButton';
+import FormInput from '../../components/FormInput/FormInput';
+import CustomButton from '../../components/CustomButton/CustomButton';
 
-const Login = () => {
+import { signInWithGoogle } from '../../utils/firebase';
+
+import './SignIn.scss';
+
+const SignIn = () => {
 
   const [email, setEmail] = useState('');
   const handleEmailChange = e => setEmail(e.target.value);
@@ -21,8 +24,8 @@ const Login = () => {
   }
 
   return (
-    <div className="login">
-      <h1>Login In</h1>
+    <div className="sign-in">
+      <h1>Sign In</h1>
 
       <form onSubmit={handleSubmit}>
         <FormInput
@@ -41,11 +44,13 @@ const Login = () => {
           label="Password"
           required
         />
-
-        <CustomButton type="submit">Log in</CustomButton>
+        <div className="sign-in-buttons">
+          <CustomButton type="submit">Sign In</CustomButton>
+          <CustomButton onClick={signInWithGoogle} customClass="google-sign-in">Sign in with Google</CustomButton>
+        </div>
       </form>
     </div>
   )
 }
 
-export default Login;
+export default SignIn;
