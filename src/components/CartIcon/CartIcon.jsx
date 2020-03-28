@@ -14,7 +14,7 @@ const CartIcon = ({ toogleCart }) => (
   </div>
 );
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   toogleCart: () => dispatch(toogleCart())
 });
 

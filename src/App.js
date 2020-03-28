@@ -22,7 +22,7 @@ class App extends React.Component {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
-        userRef.onSnapshot(userSnapshop => {
+        userRef.onSnapshot((userSnapshop) => {
           setCurrentUser({
             id: userSnapshop.id,
             ...userSnapshop.data()
@@ -69,8 +69,8 @@ const mapStateToProps = ({ user }) => ({
   currentUser: user.currentUser
 });
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
