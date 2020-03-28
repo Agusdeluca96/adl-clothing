@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 
 import Home from './pages/Home';
 import Shop from './pages/Shop';
-import SignIn from './pages/SignIn/SignIn';
-import SignUp from './pages/SignUp/SignUp';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 import Header from './components/Header';
 import { setCurrentUser } from './redux/user/user.actions';
 
