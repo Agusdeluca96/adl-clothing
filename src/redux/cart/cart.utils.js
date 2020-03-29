@@ -16,3 +16,8 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
     ];
   }
 };
+
+export const removeItemFromCart = (cartItems, cartItemToRemove) => {
+  return cartItems.filter(
+    cartItem => (cartItem.id !== cartItemToRemove.id));
+};
