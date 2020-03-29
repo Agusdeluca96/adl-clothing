@@ -1,5 +1,5 @@
 .checkout {
-  width: 55%;
+  width: 80%;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -11,14 +11,22 @@
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid darkgrey;
+    border-bottom: 1px solid #ecf0f1;
 
     .header-block {
       text-transform: capitalize;
-      width: 23%;
+      width: 20%;
+      color: #ecf0f1;
+      font-size: 20px;
 
+      &:first-child {
+        width: 15%;
+      }
+      &:nth-child(2) {
+        width: 35%;
+      }
       &:last-child {
-        width: 8%;
+        width: 10%;
       }
     }
   }
@@ -26,6 +34,7 @@
   .total {
     margin-top: 30px;
     margin-left: auto;
-    font-size: 36px;
+    font-size: 30px;
+    color: #ecf0f1;
   }
 }
