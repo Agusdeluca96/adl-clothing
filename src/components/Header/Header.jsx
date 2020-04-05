@@ -22,14 +22,14 @@ const Header = ({ currentUser, cartHidden }) => {
         <img className="logo" alt="logo" src={logo} />
       </Link>
       <div className="options">
-        <Link className="option" to="shop">SHOP</Link>
+        <Link className="option" to="/shop">SHOP</Link>
         {
           currentUser ?
             <a href="/" className="option" onClick={() => auth.signOut()}>
               SIGN OUT
             </a>
             :
-            <Link className="option" to="sign-in">SIGN IN</Link>
+            <Link className="option" to="/sign-in">SIGN IN</Link>
         }
         <CartIcon />
       </div>
