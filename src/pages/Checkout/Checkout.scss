@@ -31,10 +31,35 @@
     }
   }
 
-  .total {
-    margin-top: 30px;
-    margin-left: auto;
-    font-size: 30px;
-    color: #ecf0f1;
+  .checkout-footer {
+    width: 100%;
+    display: flex;
+    margin: 40px 0;
+
+    .test-info {
+      width: 70%;
+      text-align: left;
+      font-size: 24px;
+      margin-top: 40px;
+      color: darkred;
+      margin: auto;
+    }
+
+    .total {
+      margin: auto;
+      font-size: 30px;
+      color: #ecf0f1;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+
+      .total-amount {
+        font-size: 24px;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+    }
   }
 }
