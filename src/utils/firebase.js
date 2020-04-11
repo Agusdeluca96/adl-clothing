@@ -13,6 +13,8 @@ const config = {
   measurementId: "G-PSCS1YQEQV"
 };
 
+firebase.initializeApp(config);
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   // Verify if I receive a valid user, to not save nulls on app sign outs.
   if (!userAuth) return;
@@ -38,7 +40,35 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef
 }
 
-firebase.initializeApp(config);
+export const addCollectionAndDocuments = async (collectionKey, documentsToAdd) => {
+  const collectionRef = firestore.collection(collectionKey);
+
+  const batch = firestore.batch();
+
+  documentsToAdd.forEach(newDocument => {
+    const newDocumentRef = collectionRef.doc();
+    batch.set(newDocumentRef, newDocument);
+  })
+
+  return await batch.commit();
+}
+
+export const convertCollectionsSnapshotToMap = (collections) => {
+  const transformedCollection = collections.docs.map((doc) => {
+    const { title, items } = doc.data();
+    return {
+      id: doc.id,
+      routeName: encodeURI(title.toLowerCase()),
+      title,
+      items
+    }
+  });
+
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator
+  }, {});
+}
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
