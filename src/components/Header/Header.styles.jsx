@@ -41,5 +41,9 @@ export const OptionLink = styled(Link)`
   font-weight: 600;
   font-size: 18px;
   color: #ecf0f1;
+  cursor: pointer;
 
+  &:hover {
+  color: #2bd6b4;
+}
 `;
