@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Switch, Route, Redirect } from 'react-router-dom';
@@ -16,69 +16,45 @@ import Header from './components/Header';
 
 import './App.scss';
 
-class App extends React.Component {
-  unsubscribeFromAuth = null;
+const App = ({ checkUserSession, currentUser }) => {
+  useEffect(() => {
+    checkUserSession()
+  }, [checkUserSession]);
 
-  componentDidMount() {
-    const { checkUserSession } = this.props;
-    checkUserSession();
-
-    // // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-    // //   if (userAuth) {
-    // //     const userRef = await createUserProfileDocument(userAuth);
-
-    // //     userRef.onSnapshot((userSnapshot) => {
-    // //       setCurrentUser({
-    // //         id: userSnapshot.id,
-    // //         ...userSnapshot.data()
-    // //       });
-    // //     });
-    // //   } else {
-    // //     setCurrentUser(userAuth);
-    // //   }
-    // // });
-  };
-
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  };
-
-  render() {
-    return (
-      <div>
-        <Header />
-        <div className="content">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/shop" component={Shop} />
-            <Route exact path="/checkout" component={Checkout} />
-            <Route
-              exact
-              path="/sign-in"
-              render={() =>
-                this.props.currentUser ? (
-                  <Redirect to='/' />
-                ) : (
-                    <SignIn />
-                  )
-              }
-            />
-            <Route
-              exact
-              path="/sign-up"
-              render={() =>
-                this.props.currentUser ? (
-                  <Redirect to='/' />
-                ) : (
-                    <SignUp />
-                  )
-              }
-            />
-          </Switch>
-        </div>
+  return (
+    <div>
+      <Header />
+      <div className="content">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/shop" component={Shop} />
+          <Route exact path="/checkout" component={Checkout} />
+          <Route
+            exact
+            path="/sign-in"
+            render={() =>
+              currentUser ? (
+                <Redirect to='/' />
+              ) : (
+                  <SignIn />
+                )
+            }
+          />
+          <Route
+            exact
+            path="/sign-up"
+            render={() =>
+              currentUser ? (
+                <Redirect to='/' />
+              ) : (
+                  <SignUp />
+                )
+            }
+          />
+        </Switch>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 const mapStateToProps = createStructuredSelector({
