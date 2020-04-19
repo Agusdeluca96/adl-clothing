@@ -21,6 +21,10 @@
     height: 380px;
   }
 
+  @media screen and (max-width: 800px) {
+    height: 200px !important;
+  }
+
   &:hover {
     cursor: pointer;
 

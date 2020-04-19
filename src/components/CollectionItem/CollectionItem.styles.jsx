@@ -9,6 +9,13 @@ export const StyledCustomButton = styled(CustomButton)`
   position: absolute;
   top: 335px;
   display: none;
+
+  @media screen and (max-width: 800px) {
+    display: block;
+    opacity: 0.9;
+    min-width: unset;
+    padding: 0 10px 0 10px;
+  }
 `;
 
 export const Image = styled.img`
@@ -28,6 +35,10 @@ export const CollectionItemFooterName = styled.span`
 export const CollectionItemFooterPrice = styled.span`
   width: 90%;
   margin-bottom: 15px;
+
+  @media screen and (max-width: 800px) {
+      text-align: right;
+  }
 `;
 
 export const CollectionItemFooter = styled.div`
@@ -55,6 +66,21 @@ export const CollectionItemContainer = styled.div`
     ${StyledCustomButton} {
       opacity: 0.95;
       display: flex;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+    margin-bottom: 2vh;
+
+    &:hover {
+      .${Image} {
+        opacity: unset;
+      }
+
+      ${StyledCustomButton} {
+        opacity: unset;
+      }
     }
   }
 `;
