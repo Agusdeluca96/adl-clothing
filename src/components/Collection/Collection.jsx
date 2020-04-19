@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { selectShopCollection } from "../../redux/shop/shop.selectors";
 
 import './Collection.scss';
-import CollectionItem from '../../components/CollectionItem/CollectionItem';
+import CollectionItem from '../CollectionItem/CollectionItem';
 
 const Collection = ({ collection }) => (
   <div className="collection">
