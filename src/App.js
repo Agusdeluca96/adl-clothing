@@ -10,6 +10,7 @@ import Header from './components/Header';
 import Spinner from './components/Spinner';
 
 import './App.scss';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 const Home = lazy(() => import('./pages/Home'));
 const Shop = lazy(() => import('./pages/Shop'));
@@ -29,33 +30,35 @@ const App = ({ checkUserSession, currentUser }) => {
       <Header />
       <div className="content">
         <Switch>
-          <Suspense fallback={<Spinner />}>
-            <Route exact path="/" component={Home} />
-            <Route path="/shop" component={Shop} />
-            <Route exact path="/checkout" component={Checkout} />
-            <Route
-              exact
-              path="/sign-in"
-              render={() =>
-                currentUser ? (
-                  <Redirect to='/' />
-                ) : (
-                    <SignIn />
-                  )
-              }
-            />
-            <Route
-              exact
-              path="/sign-up"
-              render={() =>
-                currentUser ? (
-                  <Redirect to='/' />
-                ) : (
-                    <SignUp />
-                  )
-              }
-            />
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={<Spinner />}>
+              <Route exact path="/" component={Home} />
+              <Route path="/shop" component={Shop} />
+              <Route exact path="/checkout" component={Checkout} />
+              <Route
+                exact
+                path="/sign-in"
+                render={() =>
+                  currentUser ? (
+                    <Redirect to='/' />
+                  ) : (
+                      <SignIn />
+                    )
+                }
+              />
+              <Route
+                exact
+                path="/sign-up"
+                render={() =>
+                  currentUser ? (
+                    <Redirect to='/' />
+                  ) : (
+                      <SignUp />
+                    )
+                }
+              />
+            </Suspense>
+          </ErrorBoundary>
         </Switch>
       </div>
     </div>
