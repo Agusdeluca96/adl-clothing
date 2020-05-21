@@ -1,9 +1,18 @@
 body {
+  min-height: 100vh;
   font-size: 12px;
   font-family: "Open Sans Condensed";
   background: #586777;
   :-webkit-scrollbar {
     display: none;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  .content {
+    min-height: 100vh;
   }
 
   h1 {
@@ -31,5 +40,9 @@ body {
     @media screen and (max-width: 800px) {
       padding: 90px 10px 10px 10px;
     }
+  }
+
+  .pointer {
+    cursor: pointer;
   }
 }

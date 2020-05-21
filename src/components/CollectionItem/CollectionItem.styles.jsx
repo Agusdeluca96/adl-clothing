@@ -35,9 +35,9 @@ export const CollectionItemFooterName = styled.span`
 export const CollectionItemFooterPrice = styled.span`
   width: 90%;
   margin-bottom: 15px;
+  text-align: end;
 
   @media screen and (max-width: 800px) {
-      text-align: right;
   }
 `;
 
@@ -57,6 +57,7 @@ export const CollectionItemContainer = styled.div`
   height: 430px;
   align-items: center;
   position: relative;
+  margin-bottom: 3rem;
 
   &:hover {
     .${Image} {
@@ -71,7 +72,6 @@ export const CollectionItemContainer = styled.div`
 
   @media screen and (max-width: 800px) {
     width: 40vw;
-    margin-bottom: 2vh;
 
     &:hover {
       .${Image} {

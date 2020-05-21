@@ -1,6 +1,6 @@
 .menu-item {
   min-width: 30%;
-  height: 240px;
+  height: 300px;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@
   }
 
   &.large {
-    height: 380px;
+    height: 400px;
   }
 
   @media screen and (max-width: 800px) {
@@ -33,7 +33,7 @@
       transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
 
-    & .content {
+    & .menu-content {
       opacity: 0.9;
     }
   }
@@ -45,7 +45,7 @@
     background-size: cover;
   }
 
-  .content {
+  .menu-content {
     height: 90px;
     padding: 0 25px;
     display: flex;
