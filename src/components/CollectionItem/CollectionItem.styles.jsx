@@ -57,12 +57,16 @@ export const CollectionItemFooter = styled.div`
   justify-content: space-between;
   font-size: 18px;
   color: #000000;
+  
+  @media screen and (max-width: 800px) {
+    font-size: 14px;
+  }
 `;
 
 CollectionItemFooter.displayName = 'CollectionFooterContainer';
 
 export const CollectionItemContainer = styled.div`
-  width: 18vw;
+  width: 15vw;
   display: flex;
   flex-direction: column;
   height: 430px;

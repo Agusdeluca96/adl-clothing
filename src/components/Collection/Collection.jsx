@@ -8,7 +8,7 @@ import CollectionItem from '../CollectionItem/CollectionItem';
 
 const Collection = ({ collection }) => (
   <div className="collection">
-    <h1 className="title">{collection.title.toUpperCase()}</h1>
+    <h1 className="title heading">{collection.title.toUpperCase()}</h1>
     <div className="items">
       {
         collection.items.map((item) => (

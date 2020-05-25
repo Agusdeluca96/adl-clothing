@@ -10,19 +10,31 @@
 
   .sign-in-buttons {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+
+    button {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
   }
 
   .sign-up {
     display: flex;
     flex-direction: row;
-    margin-top: 30px;
+    margin-top: 4rem;
     font-size: 18px;
     color: #000000;
 
     a {
       margin-left: 5px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 90vw;
+
+    .sign-up {
+      margin-top: 3rem;
     }
   }
 }

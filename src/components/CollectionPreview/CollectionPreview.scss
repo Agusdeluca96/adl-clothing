@@ -3,9 +3,13 @@
   flex-direction: column;
   margin-bottom: 30px;
 
-  .title h1 {
+  .title {
+    width: 100%;
+  }
+
+  .heading {
     font-size: 28px;
-    margin-bottom: 25px;
+    margin-bottom: 4rem;
   }
 
   .preview {
@@ -20,6 +24,11 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 15px;
+    }
+
+    .heading {
+      font-size: 26px;
+      margin-bottom: 3rem;
     }
   }
 }

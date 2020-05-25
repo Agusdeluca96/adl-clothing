@@ -9,7 +9,7 @@
   color: #000000;
 
   .image-container {
-    width: 15%;
+    width: 20%;
     padding-right: 15px;
 
     img {
@@ -18,7 +18,7 @@
     }
   }
   .name {
-    width: 35%;
+    width: 30%;
   }
 
   .quantity,
@@ -39,9 +39,21 @@
   }
 
   .remove-button {
+    width: 10%;
     padding-left: 12px;
     cursor: pointer;
     color: darkred;
     font-size: 24px;
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 14px;
+
+    .image-container {
+      width: 22%;
+    }
+    .name {
+      width: 28%;
+    }
   }
 }

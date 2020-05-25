@@ -1,15 +1,19 @@
 .sign-up {
-  width: 400px;
+  width: 25vw;
   margin: auto;
   display: flex;
   flex-direction: column;
+
+  button {
+    width: 100%;
+  }
 
   form {
     width: 100%;
   }
 
   .sign-in {
-    margin-top: 30px;
+    margin-top: 4rem;
     font-size: 18px;
     color: #000000;
     display: flex;
@@ -17,6 +21,14 @@
 
     a {
       margin-left: 5px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 90vw;
+
+    .sign-in {
+      margin-top: 3rem;
     }
   }
 }
