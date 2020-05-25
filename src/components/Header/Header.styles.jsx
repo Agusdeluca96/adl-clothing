@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 export const HeaderContainer = styled.div`
   height: 70px;
   width: 100%;
+  background-color: #bdbdbd;
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
-  background-color: #BDBDBD;
-  position: fixed;
-  top: 0;
-  z-index: 1;
+  /* overflow: hidden; */
+  position: relative;
+  /* top: 0;
+  z-index: 9999; */
 `;
 
 export const LogoContainer = styled(Link)`
