@@ -15,8 +15,14 @@ body {
   }
 
   .content {
-    min-height: 100vh;
-    padding: 90px 50px 20px 50px;
+    min-height: calc(100vh - 70px);
+    padding: 20px 50px 20px 50px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 
   .heading {
@@ -62,7 +68,7 @@ body {
 
   @media screen and (max-width: 800px) {
     .content {
-      padding: 90px 10px 10px 10px;
+      padding: 20px 10px 20px 10px;
     }
 
     h1 {
