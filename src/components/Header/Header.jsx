@@ -6,7 +6,7 @@ import { selectCurrentUser } from '../../redux/user/user.selector';
 import { selectCartHidden } from '../../redux/cart/cart.selector';
 import { signOutStart } from '../../redux/user/user.actions'
 
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logo-white.png';
 
 import CartIcon from '../CartIcon';
 import CartDropdown from '../CartDropdown';
