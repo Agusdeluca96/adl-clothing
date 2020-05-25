@@ -9,36 +9,45 @@ const config = {
   projectId: "adl-clothing",
   storageBucket: "adl-clothing.appspot.com",
   messagingSenderId: "339295834516",
-  appId: "1:339295834516:web:e0a806c0ec376f6eb33f81",
-  measurementId: "G-PSCS1YQEQV"
+  appId: "1:339295834516:web:e0a806c0ec376f6eb33f81"
 };
 
 firebase.initializeApp(config);
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-  // Verify if I receive a valid user, to not save nulls on app sign outs.
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
-  const userSnapshot = await userRef.get();
 
-  if (!userSnapshot.exists) {
+  const userSnapShot = await userRef.get();
+
+  if (!userSnapShot.exists) {
     const { displayName, email } = userAuth;
-    const createAt = new Date();
-
+    const createdAt = new Date();
     try {
       await userRef.set({
         displayName,
         email,
-        createAt,
+        createdAt,
         ...additionalData
       });
     } catch (error) {
-      console.log(error.message)
+      console.log('error creating user', error.message);
     }
   }
-  return userRef
-}
+
+  return userRef;
+};
+
+export const getUserDocumentRef = async uid => {
+  if (!uid) return null;
+
+  try {
+    return firestore.doc(`users/${uid}`);
+  } catch (error) {
+    console.error('error fetching user', error.message);
+  }
+};
 
 export const getUserCartRef = async userId => {
   const cartsRef = firestore.collection('carts').where('userId', '==', userId);
@@ -51,19 +60,6 @@ export const getUserCartRef = async userId => {
     return snapShot.docs[0].ref;
   }
 };
-
-export const addCollectionAndDocuments = async (collectionKey, documentsToAdd) => {
-  const collectionRef = firestore.collection(collectionKey);
-
-  const batch = firestore.batch();
-
-  documentsToAdd.forEach(newDocument => {
-    const newDocumentRef = collectionRef.doc();
-    batch.set(newDocumentRef, newDocument);
-  })
-
-  return await batch.commit();
-}
 
 export const convertCollectionsSnapshotToMap = (collections) => {
   const transformedCollection = collections.docs.map((doc) => {
@@ -91,8 +87,8 @@ export const getCurrentUser = () => {
   })
 }
 
-export const auth = firebase.auth();
 export const firestore = firebase.firestore();
+export const auth = firebase.auth();
 
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: 'select_account' });
