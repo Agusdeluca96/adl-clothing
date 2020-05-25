@@ -5,7 +5,7 @@ import { addItem } from '../../redux/cart/cart.actions';
 
 import { CollectionItemContainer, StyledCustomButton, Image, CollectionItemFooter, CollectionItemFooterName, CollectionItemFooterPrice } from './CollectionItem.styles';
 
-const CollectionItem = ({ item, addItem }) => (
+export const CollectionItem = ({ item, addItem }) => (
 
   <CollectionItemContainer>
     <Image imageUrl={item.imageUrl} />

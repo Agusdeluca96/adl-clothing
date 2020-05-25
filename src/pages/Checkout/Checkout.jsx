@@ -8,7 +8,7 @@ import { selectCartItems, selectCartTotal } from '../../redux/cart/cart.selector
 import './Checkout.scss';
 import StripeCheckoutButton from '../../components/StripeCheckoutButton/StripeCheckoutButton';
 
-const Checkout = ({ cartItems, cartTotal }) => (
+export const Checkout = ({ cartItems, cartTotal }) => (
   <div className="checkout">
     <div className="checkout-header">
       <div className="header-block">

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import FormInput from '../../components/FormInput/FormInput';
-import CustomButton from '../../components/CustomButton/CustomButton';
+import CustomFormInput from '../../components/CustomFormInput';
+import CustomButton from '../../components/CustomButton';
 
 import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actions'
 
@@ -28,7 +28,7 @@ const SignIn = ({ googleSignInStart, emailSignInStart }) => {
       <h1>Sign In</h1>
 
       <form onSubmit={handleSubmit}>
-        <FormInput
+        <CustomFormInput
           name="email"
           type="email"
           value={email}
@@ -36,7 +36,7 @@ const SignIn = ({ googleSignInStart, emailSignInStart }) => {
           label="Email"
           required
         />
-        <FormInput
+        <CustomFormInput
           name="password"
           type="password"
           value={password}

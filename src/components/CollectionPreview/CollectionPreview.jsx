@@ -6,10 +6,10 @@ import './CollectionPreview.scss'
 
 import CollectionItem from '../CollectionItem';
 
-const CollectionPreview = ({ title, items, routeName, history, match }) => (
+export const CollectionPreview = ({ title, items, routeName, history, match }) => (
   <div className="collection-preview">
-    <div className="pointer" onClick={() => history.push(`${match.url}/${routeName}`)}>
-      <h1 className="title">{title.toUpperCase()}</h1>
+    <div className="title pointer" onClick={() => history.push(`${match.path}/${routeName}`)}>
+      <h1>{title.toUpperCase()}</h1>
     </div>
     <div className="preview">
       {

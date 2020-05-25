@@ -13,32 +13,29 @@ import CartDropdown from '../CartDropdown';
 
 import { HeaderContainer, LogoContainer, LogoHelper, Logo, OptionsContainer, OptionLink } from './Header.styles';
 
-const Header = ({ currentUser, cartHidden, signOutStart }) => {
-
-  return (
-    <HeaderContainer>
-      <LogoContainer to="/">
-        <LogoHelper />
-        <Logo alt="logo" src={logo} />
-      </LogoContainer>
-      <OptionsContainer>
-        <OptionLink to="/shop">SHOP</OptionLink>
-        {
-          currentUser ?
-            <OptionLink as="div" onClick={signOutStart}>
-              SIGN OUT
-            </OptionLink>
-            :
-            <OptionLink to="/sign-in">SIGN IN</OptionLink>
-        }
-        <CartIcon />
-      </OptionsContainer>
+export const Header = ({ currentUser, cartHidden, signOutStart }) => (
+  <HeaderContainer>
+    <LogoContainer to="/">
+      <LogoHelper />
+      <Logo alt="logo" src={logo} />
+    </LogoContainer>
+    <OptionsContainer>
+      <OptionLink to="/shop">SHOP</OptionLink>
       {
-        cartHidden ? null : <CartDropdown />
+        currentUser ?
+          <OptionLink as="div" onClick={signOutStart}>
+            SIGN OUT
+            </OptionLink>
+          :
+          <OptionLink to="/sign-in">SIGN IN</OptionLink>
       }
-    </HeaderContainer>
-  )
-}
+      <CartIcon />
+    </OptionsContainer>
+    {
+      cartHidden ? null : <CartDropdown />
+    }
+  </HeaderContainer>
+);
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,

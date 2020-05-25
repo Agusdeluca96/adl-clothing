@@ -18,6 +18,9 @@ export const StyledCustomButton = styled(CustomButton)`
   }
 `;
 
+StyledCustomButton.displayName = 'AddButton';
+
+
 export const Image = styled.img`
   width: 100%;
   height: 95%;
@@ -27,10 +30,14 @@ export const Image = styled.img`
   margin-bottom: 5px;
 `;
 
+Image.displayName = 'BackgroundImage';
+
 export const CollectionItemFooterName = styled.span`
   width: 90%;
   margin-bottom: 15px;
 `;
+
+CollectionItemFooterName.displayName = 'NameContainer';
 
 export const CollectionItemFooterPrice = styled.span`
   width: 90%;
@@ -41,6 +48,8 @@ export const CollectionItemFooterPrice = styled.span`
   }
 `;
 
+CollectionItemFooterPrice.displayName = 'PriceContainer';
+
 export const CollectionItemFooter = styled.div`
   width: 100%;
   height: 5%;
@@ -49,6 +58,8 @@ export const CollectionItemFooter = styled.div`
   font-size: 18px;
   color: #ecf0f1;
 `;
+
+CollectionItemFooter.displayName = 'CollectionFooterContainer';
 
 export const CollectionItemContainer = styled.div`
   width: 22vw;

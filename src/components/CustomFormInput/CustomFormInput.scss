@@ -4,7 +4,7 @@
   color: #ecf0f1;
 }
 
-.form-input {
+.custom-form-input {
   position: relative;
   margin: 45px 0;
 
@@ -24,7 +24,7 @@
       outline: none;
     }
 
-    &:focus ~ .form-input-label {
+    &:focus ~ .custom-form-input-label {
       @include shrinkLabel();
     }
   }
@@ -33,7 +33,7 @@
     letter-spacing: 0.3em;
   }
 
-  .form-input-label {
+  .custom-form-input-label {
     color: #ecf0f1;
     font-size: 16px;
     font-weight: normal;

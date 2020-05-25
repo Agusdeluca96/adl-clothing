@@ -1,5 +1,5 @@
 const CartActionTypes = {
-  TOOGLE_CART: 'TOOGLECART',
+  toggle_CART: 'toggleCART',
   ADD_ITEM: 'ADD_ITEM',
   REMOVE_ITEM: 'REMOVE_ITEM',
   CLEAR_ITEM: 'CLEAR_ITEM',

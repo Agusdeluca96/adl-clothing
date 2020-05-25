@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 import { signUpStart } from '../../redux/user/user.actions.js'
 
-import FormInput from '../../components/FormInput/FormInput';
-import CustomButton from '../../components/CustomButton/CustomButton';
+import CustomFormInput from '../../components/CustomFormInput';
+import CustomButton from '../../components/CustomButton';
 
 import './SignUp.scss';
 
@@ -39,7 +39,7 @@ const SignUp = ({ signUpStart }) => {
       <h1>Sign Up</h1>
 
       <form onSubmit={handleSubmit}>
-        <FormInput
+        <CustomFormInput
           name="displayName"
           type="text"
           value={displayName}
@@ -47,7 +47,7 @@ const SignUp = ({ signUpStart }) => {
           label="Display name"
           required
         />
-        <FormInput
+        <CustomFormInput
           name="email"
           type="email"
           value={email}
@@ -55,7 +55,7 @@ const SignUp = ({ signUpStart }) => {
           label="Email"
           required
         />
-        <FormInput
+        <CustomFormInput
           name="password"
           type="password"
           value={password}
@@ -63,7 +63,7 @@ const SignUp = ({ signUpStart }) => {
           label="Password"
           required
         />
-        <FormInput
+        <CustomFormInput
           name="confirmPassword"
           type="password"
           value={confirmPassword}

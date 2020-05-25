@@ -47,3 +47,5 @@ export const OptionLink = styled(Link)`
   color: #2bd6b4;
 }
 `;
+
+OptionLink.displayName = 'OptionLink';

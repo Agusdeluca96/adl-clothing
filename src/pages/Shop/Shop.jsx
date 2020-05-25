@@ -8,7 +8,7 @@ import Spinner from '../../components/Spinner/Spinner.jsx';
 const CollectionContainer = lazy(() => import('../../components/Collection/Collection.container'));
 const CollectionsOverviewContainer = lazy(() => import('../../components/CollectionsOverview/CollectionsOverview.container'));
 
-const Shop = ({ fetchCollectionsStart, match }) => {
+export const Shop = ({ fetchCollectionsStart, match }) => {
   useEffect(() => {
     fetchCollectionsStart();
   }, [fetchCollectionsStart])
