@@ -14,7 +14,7 @@ export const CollectionPreview = ({ title, items, routeName, history, match }) =
     <div className="preview">
       {
         items
-          .filter((item, index) => index < 4)
+          .filter((item, index) => index < 5)
           .map((item) => (
             <CollectionItem key={item.id} item={item} />
           ))

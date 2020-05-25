@@ -1,34 +1,37 @@
 import styled, { css } from 'styled-components';
 
 const baseStyles = css`
-  background-color: #2c3e50;
-  color: #ecf0f1;
+  background-color: #BDBDBD;
+  color: #000000;
   border: none;
 
   &:hover {
-    background-color: #1e2a35;
+    background-color: #616060;
+    color: #FFFFFF;
+    border: 1px solid #BDBDBD;
   }
 `;
 
 const invertedStyles = css`
-  background-color: #ecf0f1;
-  color: #2c3e50;
-  border: 1px solid #2c3e50;
+  background-color: #000000;
+  color: #BDBDBD;
+  border: 1px solid #BDBDBD;
 
   &:hover {
-    background-color: #2c3e50;
-    color: #ecf0f1;
+    background-color: #BDBDBD;
+    color: #000000;
     border: none;
   }
 `;
 
 const googleSignInStyles = css`
   background-color: #4285f4;
-  color: #ecf0f1;
+  color: #000000;
   border: none;
 
   &:hover {
     background-color: #357ae8;
+    color: #FFFFFF;
   }
 `;
 
@@ -51,7 +54,6 @@ export const CustomButtonContainer = styled.button`
   padding: 0 35px 0 35px;
   font-size: 15px;
   text-transform: uppercase;
-  font-family: "Open Sans Condensed";
   font-weight: bolder;
   cursor: pointer;
   display: flex;

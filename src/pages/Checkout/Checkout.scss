@@ -11,13 +11,14 @@
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #ecf0f1;
+    border-bottom: 1px solid #000000;
 
     .header-block {
       text-transform: capitalize;
       width: 20%;
-      color: #ecf0f1;
+      color: #000000;
       font-size: 20px;
+      font-weight: 400;
 
       &:first-child {
         width: 15%;
@@ -39,7 +40,7 @@
     .test-info {
       width: 70%;
       text-align: left;
-      font-size: 24px;
+      font-size: 20px;
       margin-top: 40px;
       color: darkred;
       margin: auto;
@@ -47,8 +48,9 @@
 
     .total {
       margin: auto;
-      font-size: 30px;
-      color: #ecf0f1;
+      font-size: 24px;
+      font-weight: bold;
+      color: #000000;
       text-align: right;
       display: flex;
       flex-direction: column;

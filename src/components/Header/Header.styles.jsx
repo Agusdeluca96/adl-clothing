@@ -7,7 +7,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-  background-color: #2c3e50;
+  background-color: #BDBDBD;
   position: fixed;
   top: 0;
   z-index: 1;
@@ -38,13 +38,13 @@ export const OptionsContainer = styled.div`
 
 export const OptionLink = styled(Link)`
   padding: 10px 15px;
-  font-weight: 600;
-  font-size: 18px;
-  color: #ecf0f1;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000000;
   cursor: pointer;
 
   &:hover {
-  color: #2bd6b4;
+  color: #FFFFFF;
 }
 `;
 

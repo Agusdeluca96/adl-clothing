@@ -15,7 +15,6 @@ export const CollectionItem = ({ item, addItem }) => (
       <CollectionItemFooterPrice>${item.price}</CollectionItemFooterPrice>
     </CollectionItemFooter>
     <StyledCustomButton
-      customClass="inverted"
       onClick={() => addItem(item)}>Add to cart</StyledCustomButton>
   </CollectionItemContainer>
 

@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
 body {
   min-height: 100vh;
   font-size: 12px;
-  font-family: "Open Sans Condensed";
-  background: #586777;
+  font-family: "Open Sans";
+  font-weight: 300;
+  background: #dcdcdc;
   :-webkit-scrollbar {
     display: none;
   }
@@ -20,17 +22,18 @@ body {
     margin: 40px 0 40px;
     text-align: center;
     font-size: 30px;
-    color: #ecf0f1;
-    text-shadow: 2px 2px 4px #000000;
-    font-family: "Cherry Swash", cursive;
+    color: #000000;
+    font-family: "Open Sans";
+    // font-weight: 400;
   }
 
   a {
     text-decoration: none;
-    color: #ecf0f1;
+    color: #000000;
 
     &:hover {
-      color: #2bd6b4;
+      color: #ffffff;
+      font-weight: bold;
     }
   }
 
