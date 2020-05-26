@@ -82,6 +82,8 @@ export const CollectionItemContainer = styled.div`
     ${StyledCustomButton} {
       opacity: 0.95;
       display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 

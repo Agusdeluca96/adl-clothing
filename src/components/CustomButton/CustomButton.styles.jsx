@@ -56,8 +56,6 @@ export const CustomButtonContainer = styled.button`
   text-transform: uppercase;
   font-weight: bolder;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
 
   @media screen and (max-width: 800px) {
     font-size: 12px;
